@@ -1,0 +1,33 @@
+# Ignore Shopify files that should not be uploaded or version controlled
+config/settings_data.json
+
+# Ignore the node_modules directory
+/node_modules/
+
+# Ignore deployment files
+.deploy/
+
+# Ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Ignore system files and directories
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore the local settings file for Theme Kit
+config.yml
+
+# Ignore editor settings
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Ignore build files
+/dist/
+/build/
