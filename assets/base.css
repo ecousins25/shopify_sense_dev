@@ -3570,11 +3570,11 @@ ul#HeaderMenu-SubMenuList-shop-decals-by-category-safety-glass-decal- > li > a {
     font-weight: bold;
 }
 
-  .menu-drawer__navigation, .menu-drawer__inner-submenu, .menu-drawer__submenu  {
-    background-image: url('https://cdn.shopify.com/s/files/1/0680/6935/9838/files/Menu_BG_1_Vectorized.png?v=1705770168');
-    background-size: cover;
-    /* Add any other background properties here */
-  }
+.menu-drawer__navigation, .menu-drawer__inner-submenu, .menu-drawer__submenu .has-submenu {
+  background-color: #00F4FF;
+  /* Add any other background properties here */
+}
+
 
 .icon-hamburger {
   fill: #000000;

@@ -1,0 +1,79 @@
+{% comment %} 
+  menu_item_thumb.liquid
+  Dynamically handles link objects passed to it.
+
+use this 
+{% render 'menu_item_thumb', link: grandchildlink %}
+
+
+{% endcomment %}
+
+<style>
+    .force-row {
+        display: flex;
+        align-items: center;
+      }
+</style>
+
+{% assign current_link = link %}
+
+{% if current_link.url contains '/products/' %}
+  {% assign product_handle = current_link.url | split: '/' | last %}
+  <div id="productImageContainer-{{ product_handle }}">
+    Loading...
+  </div>
+{% endif %}
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Assuming productHandles is an array of product handles. If you're working with individual handles, adjust accordingly.
+        var productHandles = ['{{ product_handle }}']; // This needs to be dynamically populated based on your actual use case.
+      
+        productHandles.forEach(function(productHandle) {
+          var productImageContainerId = 'productImageContainer-' + productHandle; // Moved outside the if statement to be accessible throughout
+      
+          if (productHandle) {
+            fetch('/products/' + productHandle + '.js')
+              .then(response => response.json())
+              .then(product => {
+                var featuredImageUrl = product.images[0]; // Assuming direct URL string
+                var productImageContainer = document.getElementById(productImageContainerId);
+      
+                // Clear the "Loading..." message and insert the image
+                productImageContainer.innerHTML = '';
+                var imgElement = new Image();
+                imgElement.src = featuredImageUrl;
+                imgElement.alt = product.title;
+                imgElement.width = 75; // Adjust width as necessary
+                productImageContainer.appendChild(imgElement);
+              })
+              .catch(error => {
+                console.error('Error fetching product data:', error);
+                document.getElementById(productImageContainerId).innerHTML = 'Image load failed.';
+              });
+          } else {
+            console.log('Product handle not defined.');
+            // Check if element exists before trying to access it
+            var container = document.getElementById(productImageContainerId);
+            if(container) {
+              container.innerHTML = 'Product not found.';
+            }
+          }
+        });
+      });      
+</script>
+    
+
+
+<script>
+    //this is needed to override background color that .gradient applies
+    document.addEventListener('DOMContentLoaded', function() {
+        var elements = document.querySelectorAll('.menu-drawer__submenu.has-submenu.gradient');
+        elements.forEach(function(element) {
+          element.style.background = '#00F4FF';
+        });
+      });      
+</script>
+  
+ 
