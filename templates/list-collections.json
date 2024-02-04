@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "MENS HOODIES",
+        "sort": "alphabetical",
+        "image_ratio": "square",
+        "columns_desktop": 5,
+        "columns_mobile": "2"
+      }
+    },
+    "17067270677ff34c80": {
+      "type": "apps",
+      "blocks": {
+        "easydisplay_product_showcase_app_block_U9Jk4H": {
+          "type": "shopify:\/\/apps\/easydisplay-product-showcase\/blocks\/app-block\/5ef99e30-a8aa-41b6-8040-013254b15195",
+          "settings": {
+            "epcs_slider_heading": "",
+            "epcs_slider_sub_heading": "",
+            "epcs_slider_heading_size": 30,
+            "epcs_slider_sub_heading_size": 30,
+            "epcs_slider_heading_alignment": "center",
+            "epcs_slider_sec_back_color": "",
+            "epcs_slider_heading_color": "",
+            "epcs_slider_sub_heading_color": "",
+            "epcs_slider_sec_pad_top": 0,
+            "epcs_slider_sec_pad_bot": 0
+          }
+        }
+      },
+      "block_order": [
+        "easydisplay_product_showcase_app_block_U9Jk4H"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17067270677ff34c80"
+  ]
+}
