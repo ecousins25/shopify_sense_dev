@@ -285,6 +285,9 @@
       }
     </script>
   {% render 'gp-head' %}
+  
+  {{ 'BHL-styles.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'BHL-menu.js' | asset_url }}" defer="defer"></script>
 </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">

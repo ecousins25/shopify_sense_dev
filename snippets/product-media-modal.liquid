@@ -10,7 +10,7 @@
 {% endcomment %}
 
 <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
-  {% include 'breadcrumbs' %}
+  {% comment %} {% render 'breadcrumbs' %} {% endcomment %}
   <div
     class="product-media-modal__dialog color-{{ section.settings.color_scheme }} gradient"
     role="dialog"
